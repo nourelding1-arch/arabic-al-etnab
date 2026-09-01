@@ -1,0 +1,841 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+}
+
+.notes-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.9;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* جعل النصوص واضحة وسميكة */
+.notes-container p,
+.notes-container li,
+.notes-container td,
+.notes-container span {
+  font-weight: 600;
+}
+
+.notes-container h1,
+.notes-container h2,
+.notes-container h3,
+.notes-container h4 {
+  font-weight: 800;
+}
+
+/* منع الصور من الخروج من الشاشة */
+.notes-container img,
+.notes-container svg {
+  max-width: 100%;
+}
+
+/* الجداول */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper table {
+  min-width: 650px;
+}
+
+/* الكروت المتجاورة */
+.responsive-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.responsive-card {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+/* الموبايل والتابلت */
+@media (max-width: 768px) {
+
+  .notes-container {
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .notes-container p,
+  .notes-container li,
+  .notes-container td {
+    font-size: 16px !important;
+  }
+
+  .notes-container h1 {
+    font-size: 24px !important;
+  }
+
+  .notes-container h2 {
+    font-size: 21px !important;
+  }
+
+  .notes-container h3 {
+    font-size: 19px !important;
+  }
+
+  .notes-container h4 {
+    font-size: 17px !important;
+  }
+
+  /* Header */
+  .responsive-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center;
+  }
+
+  .teacher-info {
+    justify-content: center;
+  }
+
+  .contact-area {
+    justify-content: center;
+    text-align: center !important;
+  }
+
+  /* الكروت جنب بعض تصبح تحت بعضها */
+  .responsive-row {
+    flex-direction: column;
+  }
+
+  .responsive-card {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  /* العنوان الرئيسي */
+  .main-title {
+    padding: 16px !important;
+  }
+
+  .main-title h1 {
+    font-size: 23px !important;
+  }
+
+  .main-title p {
+    font-size: 15px !important;
+  }
+
+  /* الكروت */
+  .card {
+    padding: 15px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* زر الواتساب */
+  .whatsapp-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* الموبايلات الصغيرة */
+@media (max-width: 480px) {
+
+  .notes-container {
+    padding: 8px;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .notes-container p,
+  .notes-container li,
+  .notes-container td {
+    font-size: 15px !important;
+  }
+
+  .notes-container h1 {
+    font-size: 21px !important;
+  }
+
+  .notes-container h2 {
+    font-size: 19px !important;
+  }
+
+  .notes-container h3 {
+    font-size: 17px !important;
+  }
+
+  .notes-container h4 {
+    font-size: 16px !important;
+  }
+
+  .card {
+    padding: 12px !important;
+  }
+}
+</style><div class="notes-container"><!-- Header Container --><div class="responsive-header" style="background: #ffffff; padding: 20px; border-radius: 10px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; border-bottom: 4px solid #1e3c72;">  <!-- Logo & Title -->  <div class="teacher-info" style="display: flex; align-items: center; gap: 15px;"><div style="width: 65px; height: 65px; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 26px; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.2); border: 2px solid #ffd700; flex-shrink: 0;">
+  أ
+</div>
+
+<div>
+  <h2 style="margin: 0; color: #1e3c72; font-size: 22px; font-weight: bold;">
+    مس إيناس مازن
+  </h2>
+
+  <p style="margin: 0; color: #7f8c8d; font-size: 14px; font-weight: 700;">
+    سلسلة تبسيط اللغة العربية
+  </p>
+</div>
+
+  </div>  <!-- Contact & WhatsApp -->  <div class="contact-area" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;"><div style="text-align: left; font-size: 14px; color: #34495e;">
+  <span style="font-weight: bold; color: #1e3c72;">
+    للتواصل والاستفسار:
+  </span>
+  <br>
+
+  <span style="direction: ltr; display: inline-block; font-weight: bold;">
+    01556020511
+  </span>
+</div>
+
+<a
+  class="whatsapp-button"
+  href="https://wa.me/201556020511"
+  target="_blank"
+  style="background-color: #25D366; color: white; text-decoration: none; padding: 10px 18px; border-radius: 25px; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);"
+>
+
+  <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+  </svg>
+
+  تواصل عبر واتساب
+
+</a>
+
+  </div></div><!-- Main Title --><div
+  class="main-title"
+  style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
+>  <h1 style="margin: 0; font-size: 28px; font-weight: 800;">
+    علم المعاني (الأساليب)
+  </h1>  <p style="margin-top: 10px; font-size: 18px; color: #e0e6ed; font-weight: 700;">
+    الإيجاز | الإطناب | الخبر | الإنشاء | القصر | التوكيد
+  </p></div><!-- Introduction Card --><div
+  class="card"
+  style="background-color: #ffffff; border-right: 5px solid #2a5298; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+>  <h2 style="color: #1e3c72; margin-top: 0;">
+    الإيجاز والإطناب
+  </h2>  <p style="font-size: 16px;">
+    إذا أردت عرض أفكارك بعبارات معينة، إما أن تكون معاني كلماتك على قدر ألفاظك ، وهذا يسمى
+    <strong>بالمساواة</strong>
+    وإما أن تكون الألفاظ أكثر من المعاني ، وهذا يسمى
+    <strong>بالإطناب</strong>،
+    أو تكون الألفاظ أقل من المعاني ، وهذا يسمى
+    <strong>بالإيجاز</strong>.
+  </p></div><!-- Section 1 --><div
+  class="card"
+  style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+>  <h2 style="color: #d9534f; border-bottom: 2px solid #f2dede; padding-bottom: 10px; margin-top: 0;">
+    أولاً: الإيجاز
+  </h2>  <p style="font-size: 16px;">
+    هو التعبير عن الأفكار الواسعة و المعاني الكثيرة بأقل عدد من الألفاظ .وهو نوعان :
+  </p>  <!-- إيجاز القصر -->  <div style="background-color: #eef7fe; border: 1px solid #bce8f1; border-radius: 8px; padding: 15px; margin-top: 15px;"><h3 style="color: #31708f; margin-top: 0;">
+  (1) إيجاز القصر :
+</h3>
+
+<p style="margin-bottom: 10px;">
+  ويكون بتضمين العبارات القصيرة معاني كثيرة من غير حذف
+</p>
+
+<ul style="list-style-type: none; padding-right: 0;">
+
+  <li style="margin-bottom: 12px; background: #fff; padding: 10px; border-radius: 5px; border-right: 3px solid #31708f;">
+    قال تعالى:
+    <strong>" أَلاَ لَهُ الْخَلْقُ وَالأَمْرُ "</strong>
+    العبارة توضح معاني كثيرة تتعلق بالخالق و عظمته و قدرته و وحدانيته .... إلخ .
+  </li>
+
+  <li style="margin-bottom: 12px; background: #fff; padding: 10px; border-radius: 5px; border-right: 3px solid #31708f;">
+    <strong>"وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ"</strong>
+    العبارة توضح معاني كثيرة من تخويف للقاتل و حقن للدماء و شعور بالأمن والأمان ...إلخ .
+  </li>
+
+  <li style="margin-bottom: 12px; background: #fff; padding: 10px; border-radius: 5px; border-right: 3px solid #31708f;">
+    <strong>(إذا لم تستح فاصنع ما شئت)</strong>
+    ، الكثير من المعاني التي يحملها ذلك الأمر التهديدي ، ومعناه أنه إذا انتزع الحياء من نفس الإنسان فقد يعمد إلى عمل الفواحش والمنكرات بأنواعها ، سراً وجهراً ، قولاً وعملاً ، ولكن العاقل يدرك أن وراء هذا القول ما وراءه من تهديد ووعيد ، فمن يقدم على ذلك ، فالحساب أمامه والعقاب ينتظره .
+  </li>
+
+  <li style="margin-bottom: 12px; background: #fff; padding: 10px; border-radius: 5px; border-right: 3px solid #31708f;">
+    جاء في رسالة الرسول - صلى الله عليه وسلم - إلى كسرى :
+    <strong>أسلم تَسْلَمْ</strong>.
+    وفي قول الرسول ( أسلم تسلم) غاية الإيجاز ، ومنتهى الاختصار ، فمعنى هاتين الكلمتين : اعرف الإسلام ، وادخل فيه ، وسلِّم أمرك للَّه ، بالانقياد له بالطاعة ، فإن تحقق ذلك سلمت نفسك من العذاب وسلطانك من الانهيار.
+  </li>
+
+  <li style="margin-bottom: 5px; background: #fff; padding: 10px; border-radius: 5px; border-right: 3px solid #31708f;">
+    وفي المقولة
+    <strong>(الآن حمي الوطيس)</strong>
+    يعبر عن مدى شدة لظى الحرب
+  </li>
+
+</ul>
+
+  </div>  <!-- إيجاز بالحذف -->  <div style="background-color: #fcf8e3; border: 1px solid #faebcc; border-radius: 8px; padding: 15px; margin-top: 20px;"><h3 style="color: #8a6d3b; margin-top: 0;">
+  (۲) إيجاز بالحذف :
+</h3>
+
+<div class="table-wrapper">
+
+  <table style="width: 100%; text-align: center; border-collapse: collapse; background: white; margin-top: 10px;">
+
+    <tr style="background-color: #f7ecb5; color: #8a6d3b; font-weight: bold;">
+
+      <td style="padding: 10px; border: 1px solid #faebcc;">
+        حذف حرف
+      </td>
+
+      <td style="padding: 10px; border: 1px solid #faebcc;">
+        حذف كلمة
+      </td>
+
+      <td style="padding: 10px; border: 1px solid #faebcc;">
+        حذف جملة
+      </td>
+
+      <td style="padding: 10px; border: 1px solid #faebcc;">
+        حذف شبه جملة
+      </td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+  </div></div><!-- إيجاز بحذف حرف --><div
+  class="card"
+  style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+>  <h3 style="color: #2e7d32; border-bottom: 2px solid #a5d6a7; padding-bottom: 8px; margin-top: 0;">
+    أولاً: إيجاز بحذف حرف :
+  </h3>  <p style="font-weight: bold; color: #388e3c;">
+    ١– حذف حرف من بنية الكلمة
+    &nbsp; | &nbsp;
+    ٢– حذف حرف النداء
+  </p>  <div style="margin-top: 15px; background: #f1f8e9; padding: 15px; border-radius: 6px;"><h4 style="color: #1b5e20; margin-top: 0;">
+  ١– حذف حرف النداء:
+</h4>
+
+<p>
+  إذا وجدت في الجملة منادى بدون أداة النداء، تستطيع وضع (يا) قبله
+</p>
+
+<ul style="background: white; padding: 15px; border-radius: 6px; list-style: circle;">
+
+  <li>
+    أحبك مصر من أعماق قلبي ** وحبك في صميم القلب نام.
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: أحبك يا مصر
+    </span>
+  </li>
+
+  <li>
+    شباب النيل أنتم ظل مصر ** وليس بغيركم تحيا البلاد.
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: يا شباب النيل
+    </span>
+  </li>
+
+  <li>
+    خليلي من قيس إذا قطعتما ** جبال سليمى فارفدا الليل أجمعا :
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها يا خليلي
+    </span>
+  </li>
+
+</ul>
+
+<p>
+  <strong>إذا بدأت الجملة بـ (أيها) أو (أيتها):</strong>
+</p>
+
+<div style="background: white; padding: 10px; border-radius: 6px; border-right: 4px solid #4caf50;">
+
+  أيها البيت العتيق المشرف .. جاءك العبد الضعيف المسرف.
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها: يا أيها.
+  </span>
+
+</div>
+
+  </div>  <div style="margin-top: 15px; background: #f1f8e9; padding: 15px; border-radius: 6px;"><h4 style="color: #1b5e20; margin-top: 0;">
+  ٢– حذف حرف من بنية الكلمة
+</h4>
+
+<p>
+  <strong>حذف نون مضارع (كان) المجزوم</strong>
+</p>
+
+<ul style="background: white; padding: 15px; border-radius: 6px; list-style: circle;">
+
+  <li>
+    (وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ وَلَا تَحْزَنْ عَلَيْهِمْ وَلَا تَكُ فِي ضَيْقٍ مِّمَّا يَمْكُرُونَ . إِنَّ اللَّهَ مَعَ الَّذِينَ اتَّقَوا وَّالَّذِينَ هُم مُّحْسِنُونَ)
+  </li>
+
+  <li>
+    ومن يك ذا فضل فيبخل بفضله ** على قومه يستغن عنه ويذمم).
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها يكن.
+    </span>
+  </li>
+
+</ul>
+
+<p>
+  <strong>حذف تاء الفعل (تستطيع)</strong>
+</p>
+
+<div style="background: white; padding: 10px; border-radius: 6px; border-right: 4px solid #4caf50; margin-bottom: 10px;">
+
+  قال تعالى:
+  (فما اسطاعوا أن يظهروه وما استطاعوا له نقبا).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها: استطاعوا.
+  </span>
+
+</div>
+
+<p>
+  <strong>حذف إحدى التاءين من الفعل المضارع</strong>
+</p>
+
+<div style="background: white; padding: 10px; border-radius: 6px; border-right: 4px solid #4caf50;">
+
+  يا صاحبي تقصيا نظريكما ** تريا وجوه الأرض كيف تصور :
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها تتصور.
+  </span>
+
+</div>
+
+  </div></div><!-- إيجاز بحذف كلمة --><div
+  class="card"
+  style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+>  <h3 style="color: #e67e22; border-bottom: 2px solid #fbe3d5; padding-bottom: 8px; margin-top: 0;">
+    ثانياً : إيجاز بحذف كلمة
+  </h3>  <div style="background-color: #fff8e1; padding: 10px; border-radius: 6px; text-align: center; font-weight: bold; color: #d35400; margin-bottom: 15px;">المبتدأ | الخبر | الفعل | الفاعل | الصفة | المفعول | الموصوف | المضاف | التمييز | المضاف إليه | البدل
+
+  </div>  <div style="margin-bottom: 15px;"><h4 style="color: #d35400; margin-bottom: 5px;">
+  1] حذف الفعل :
+</h4>
+
+<p style="margin-top: 0;">
+  إذا وجدت كلمة منصوبة في الجملة فلابد من وجود فعل لنصبها، ولكن قد يحذف الفعل للإيجاز
+</p>
+
+<ul style="background: #fffcf5; padding: 15px; border-radius: 6px; border: 1px solid #ffe0b2;">
+
+  <li style="margin-bottom: 8px;">
+    فصبرا في مجال الموت صبرا .. فما نيل الخلود بمستطاع.
+    صبرا مفعول مطلق لفعل محذوف
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها اصبرا صبرا.
+    </span>
+  </li>
+
+  <li style="margin-bottom: 8px;">
+    لنا - معشر الأنصار - مجد مؤثل *** بإرضائنا خير البرية أحمدا).
+    مفعول به لفعل محذوف
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها لنا، أقصد معشر الأنصار.
+    </span>
+  </li>
+
+  <li style="margin-bottom: 8px;">
+    <strong>
+      جملة التي تبدأ بشيء نريد أن نشجع عليه وهو ما يسمى بأسلوب الإغراء:
+    </strong>
+
+    أخاك أخاك؛ إن من لا أخا له كساع إلى حرب بغير سلاح.
+
+    كلمة (أخاك) مفعول به لفعل محذوف
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: الزم أخاك.
+    </span>
+
+  </li>
+
+  <li style="margin-bottom: 8px;">
+
+    <strong>
+      الجملة تبدأ بشيء نريد أن نحذر منه يسمى أسلوب تحذير:
+    </strong>
+
+    الكذب؛ فإنه مهلكة.
+
+    كلمة (الكذب) مفعول به لفعل محذوف
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها : احذر الكذب.
+    </span>
+
+  </li>
+
+  <li>
+
+    <strong>
+      إذا وجدنا اسما بعد (إذا) و (إن) الشرطيتين:
+    </strong>
+
+    <br><br>
+
+    إذا القوم قالوا من فتى خلت أنني ** عنيت فلم أكسل ولم اتبلد).
+
+    كلمة (القوم) فاعل لفعل محذوف
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: إذا قال القوم قالوا.
+    </span>
+
+    <br><br>
+
+    إذا المرء لم يدنس من اللؤم عرضه .. فكل رداء يرتديه جميل
+
+    <br><br>
+
+    وإن هو لم يحمل عن النفس ضيمها .. فليس إلى حسن الثناء سبيل)
+
+  </li>
+
+</ul>
+
+  </div>  <!-- حذف الفاعل والمفعول -->  <div class="responsive-row" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;"><div
+  class="responsive-card"
+  style="flex: 1; min-width: 280px; background: #fffcf5; padding: 15px; border-radius: 6px; border: 1px solid #ffe0b2;"
+>
+
+  <h4 style="color: #d35400; margin-top: 0;">
+    ٢] حذف الفاعل :
+  </h4>
+
+  <p>
+    إذا وجدنا فعلا مبنيا للمجهول:
+  </p>
+
+  <p>
+    (خلقوا وما خلقوا لمكرمة .. فكأنهم خلقوا وما خلقوا).
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها : خلقهم الله.
+    </span>
+  </p>
+
+</div>
+
+
+<div
+  class="responsive-card"
+  style="flex: 1; min-width: 280px; background: #fffcf5; padding: 15px; border-radius: 6px; border: 1px solid #ffe0b2;"
+>
+
+  <h4 style="color: #d35400; margin-top: 0;">
+    ٣] حذف المفعول :
+  </h4>
+
+  <p>
+    إذا وجدنا فعلا متعديا ليس له مفعول
+  </p>
+
+  <p>
+    إذا ما نعمة وافت لغيري .. شكرت كأن لي فيها نصيبا).
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: شكرت الله.
+    </span>
+  </p>
+
+</div>
+
+  </div>  <!-- حذف المبتدأ والخبر -->  <div class="responsive-row" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px;"><div
+  class="responsive-card"
+  style="flex: 1; min-width: 280px; background: #fffcf5; padding: 15px; border-radius: 6px; border: 1px solid #ffe0b2;"
+>
+
+  <h4 style="color: #d35400; margin-top: 0;">
+    ٤] حذف المبتدأ :
+  </h4>
+
+  <p>
+    إذا بدأت الجملة بنكرة مرفوعة، فإن هذه النكرة تعرب خبرا لمبتدأ محذوف
+  </p>
+
+  <ul style="padding-right: 15px;">
+
+    <li>
+      قوم إذا حاربوا ضروا عدوهم .. أو حاولوا النفع في أشياعهم نفعوا
+
+      <span style="color: #d9534f; font-weight: bold;">
+        أصلها: هم قوم.
+      </span>
+
+    </li>
+
+    <li>
+      لا تنه عن خلق وتأتي مثله عار عليك إذا فعلت عظيم
+
+      <span style="color: #d9534f; font-weight: bold;">
+        أصلها :هو عار
+      </span>
+
+    </li>
+
+  </ul>
+
+</div>
+
+
+<div
+  class="responsive-card"
+  style="flex: 1; min-width: 280px; background: #fffcf5; padding: 15px; border-radius: 6px; border: 1px solid #ffe0b2;"
+>
+
+  <h4 style="color: #d35400; margin-top: 0;">
+    ٥] حذف الخبر :
+  </h4>
+
+  <p>
+    بعد كلمة (لولا):
+  </p>
+
+  <ul style="padding-right: 15px;">
+
+    <li>
+      لولا الذي غرس الشتاء بكفه .. لاقى المصيف هشائما لا تثمر.
+
+      <span style="color: #d9534f; font-weight: bold;">
+        أصلها : لولا الذي غرس الشتاء موجود.
+      </span>
+
+    </li>
+
+    <li>
+      لولا الطبيب لمات المريض.
+
+      <span style="color: #d9534f; font-weight: bold;">
+        أصلها: لولا الطبيب موجود
+      </span>
+
+    </li>
+
+  </ul>
+
+</div>
+
+  </div>  <!-- 6 - 9 -->  <div style="background: #fffcf5; padding: 15px; border-radius: 6px; border: 1px solid #ffe0b2;"><h4 style="color: #d35400; margin-top: 0;">
+  ٦] حذف الصفة أو الموصوف :
+</h4>
+
+<p>
+  ندرك من سياق الجملة أن هناك صفة محذوفة، وبقي الموصوف دليلا عليها :
+
+  قال تعالى:
+  (وكان وراءهم ملك يأخذ كل سفينة غصبا).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها: كل سفينة صالحة.
+  </span>
+</p>
+
+<p>
+  أو ندرك من سياق الجملة أن هناك موصوفا محذوفا، وبقيت الصفة دليلا عليه:
+
+  قال تعالى:
+  (وذكر الله كثيرا).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها : ذكرا كثيرا.
+  </span>
+</p>
+
+<hr style="border: 0; border-top: 1px dashed #ffd8a8; margin: 15px 0;">
+
+
+<h4 style="color: #d35400;">
+  ٧] حذف المضاف :
+</h4>
+
+<p>
+  قال تعالي:
+  (واسأل القرية التي كُنَّا).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها : اسأل أهل القرية.
+  </span>
+
+  <br><br>
+
+  قال تعالي عن بني إسرائيل لما عبدوا (العجل):
+
+  ( وَأُشْرِبُوا فِي قُلُوبهم العجل).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها: حب العجل.
+  </span>
+</p>
+
+
+<hr style="border: 0; border-top: 1px dashed #ffd8a8; margin: 15px 0;">
+
+
+<h4 style="color: #d35400;">
+  ٨] حذف المضاف إليه :
+</h4>
+
+<p>
+  قال تعالي:
+  (كل في فلك يسبحون).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها : كل نجم أو كل كوكب في فلك يسبحون.
+  </span>
+
+  <br><br>
+
+  قال الشاعر :
+  فساغ لي الشراب وكنت قبلا .. أكاد أغص من الماء الفرات).
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها: قبل ذلك.
+  </span>
+</p>
+
+
+<hr style="border: 0; border-top: 1px dashed #ffd8a8; margin: 15px 0;">
+
+
+<h4 style="color: #d35400;">
+  ٩] إذا وجد في السياق ما يدل عليه :
+</h4>
+
+<ul style="padding-right: 15px;">
+
+  <li>
+    مثال: أخذت كتاب وقلم خالد
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها : كتاب خالد، وقلم خالد.
+    </span>
+  </li>
+
+  <li>
+    قال الشاعر : ولولا ثلاث هن من عيشة الفتى ** وجدك لم أحفل متى قام عودي).
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: ثلاث صفات.
+    </span>
+  </li>
+
+  <li>
+    قال الشاعر: كل هذا في التراب ** آه من هذا التراب).
+
+    <span style="color: #d9534f; font-weight: bold;">
+      أصلها: كل هذا الجمال.
+    </span>
+  </li>
+
+</ul>
+
+  </div></div><!-- إيجاز بحذف جملة --><div
+  class="card"
+  style="background-color: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+>  <h3 style="color: #8e44ad; border-bottom: 2px solid #e1bee7; padding-bottom: 8px; margin-top: 0;">
+    ثالثاً: إيجاز بحذف جملة
+  </h3>  <div style="background: #f3e5f5; padding: 15px; border-radius: 6px;"><h4 style="color: #4a148c; margin-top: 0;">
+  1] حذف جملة لقرينة : نجد دليلا يدل على الجملة المحذوفة.
+</h4>
+
+<p>
+  <strong>حذف جواب الشرط:</strong>
+
+  قال الشاعر :
+  (إن يشف هذا الجسم طيب هوائها ** أيلطف النيران طيب هواء ).
+
+  أداة الشرط: (إن)، وفعل الشرط (يشف)، وجواب الشرط محذوف.
+</p>
+
+
+<p>
+  <strong>
+    حذف جملة فعل الشرط ، بعد (إن) الشرطية المدغمة في (لا) - (إلا) :
+  </strong>
+
+  مثال: اجتهد وإلا تندم
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها : وإلا تفعل ذلك تندم.
+  </span>
+</p>
+
+
+<p>
+
+  قال الشاعر :
+  أتى الزمان بنوه في شبيبته .. فسرهم وآتيناه على الهرم.
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها وآتيناه على الهرم فساءنا.
+  </span>
+
+  <br><br>
+
+  لأن الشاعر قصد أن يبني فكرة البيت على المقابلة بين حالة من أتى في زمن انتشار الخير فسعد وبين من جاء زمن قلة الخير فاستاء وحزن.
+
+</p>
+
+
+<p>
+
+  قول الشاعر:
+  علفتها تبنا وماء باردا ** حتى غدت همالة عيناها.
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها علفتها تبنا وسقيتها ماء.
+  </span>
+
+</p>
+
+  </div></div><!-- حذف شبه الجملة --><div
+  class="card"
+  style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);"
+>  <h3 style="color: #00838f; border-bottom: 2px solid #b2ebf2; padding-bottom: 8px; margin-top: 0;">
+    رابعاً: حذف شبه الجملة
+  </h3>  <div style="background: #e0f7fa; padding: 15px; border-radius: 6px;"><p style="margin-top: 0;">
+  نجد فعلا لازما : يصل لمفعوله بواسطة حرف الجر أو ظرف).
+  ولا نجد بعده الجار والمجرور أو الظرف.
+</p>
+
+<div style="background: white; padding: 10px; border-radius: 6px; border-right: 4px solid #00838f;">
+
+  مثال: نظرت وتأملت
+
+  <span style="color: #d9534f; font-weight: bold;">
+    أصلها نظرت إلى الكون وتأملت فيه.
+  </span>
+
+</div>
+
+  </div></div></div>
